@@ -12,15 +12,7 @@ class Card extends Component {
         <Text pos={"absolute"} bottom={"10px"} left={"10px"} color="#fff">
           {this.props.name}
         </Text>
-        <Image
-          h={"400px"}
-          w="100%"
-          objectFit={"cover"}
-          src={
-            this.props.img ||
-            "https://cdn1.vectorstock.com/i/1000x1000/50/20/no-photo-or-blank-image-icon-loading-images-vector-37375020.jpg"
-          }
-        />
+        <Image h={"400px"} w="100%" objectFit={"cover"} src={this.props.img} />
       </Box>
     );
   }
