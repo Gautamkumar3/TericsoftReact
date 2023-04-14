@@ -32,6 +32,7 @@ const CategorySection = () => {
             color={active === type ? "blue" : "#fff"}
             fontSize={active === type ? "20px" : "16px"}
             onClick={() => handleFilter(type)}
+            _hover={{ cursor: "pointer" }}
           >
             {type}
           </Text>

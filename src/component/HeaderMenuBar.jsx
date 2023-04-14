@@ -58,6 +58,7 @@ const HeaderMenuBar = () => {
           borderRadius={"50%"}
           onClick={() => setActive(el.title)}
           bg={active === el.title ? "#112010" : "black.800"}
+          _hover={{ cursor: "pointer" }}
         >
           <Center>{el.icons}</Center>
 
