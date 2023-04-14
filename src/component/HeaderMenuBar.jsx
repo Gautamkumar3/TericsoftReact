@@ -6,8 +6,11 @@ import { MdOutlineGolfCourse, MdSportsGymnastics } from "react-icons/md";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 
 import { useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getGameData } from "../store/gameData/gamedata.action";
 
-const data = [
+const iconData = [
   {
     icons: <AiFillStar size="50px" />,
     title: "Featured",
@@ -35,15 +38,16 @@ const data = [
   },
 ];
 const HeaderMenuBar = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("Cycling");
+  const dispatch = useDispatch();
 
-  const activeStyle = {
-    border: "2px solid red",
-  };
+  useEffect(() => {
+    dispatch(getGameData(active));
+  }, [active]);
 
   return (
     <Flex color={"#fff"} justify={"space-around"} bg="blackAlpha.800" py={5}>
-      {data.map((el) => (
+      {iconData.map((el) => (
         <Box
           key={el.title}
           color="#fff"
